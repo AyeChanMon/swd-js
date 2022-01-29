@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="vendor/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="vendor/slick/slick.css" type="text/css">
+    <link rel="stylesheet" href="vendor/slick/slick-theme.css" type="text/css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-8">
+                <div class="slide my-5">
+                    <img src="vendor/images/exo.jpg" alt="" class="img-fluid mx-2">
+                    <img src="vendor/images/bts.jpg" alt="" class="img-fluid mx-2">
+                    <img src="vendor/images/exo1.jpg" alt="" class="img-fluid mx-2">
+                    <img src="vendor/images/twice.jpg" alt="" class="img-fluid mx-2">
+                    <img src="vendor/images/wutthmone.jpg" alt="" class="img-fluid mx-2">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="vendor/js/jquery-3.3.1.min.js"></script>
+    <script src="vendor/js/bootstrap.min.js"></script>
+    <script src="vendor/slick/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.slide').slick({
+                dots: true,
+                infinite: false,
+                speed: 300,
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                lazyLoad: 'ondemand',
+                responsive: [
+                    {
+                        breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2,
+                            infinite: true,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                    // You can unslick at a given breakpoint now by adding:
+                    // settings: "unslick"
+                    // instead of a settings object
+                ]
+            });
+        });
+    </script>
+</body>
+
+</html>

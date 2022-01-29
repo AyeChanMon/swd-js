@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav</title>
+    <link rel="stylesheet" href="css/feather_icons_web/feather.css" type="text/css">
+    <style>   
+    @import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400&family=Lora&family=Montagu+Slab&family=Slabo+27px&display=swap');  
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Slabo 27px', serif;
+        }  
+
+        body{
+            background: #fbdce1;
+        }
+
+        header{
+            display: flex;
+            align-items: center;
+            width: 80%;
+            justify-content: space-between;
+            margin: auto;
+            background: #fff7f7;
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+            padding: 15px;
+            transition: 0.5s;
+        }
+
+        header:hover{
+            box-shadow: 0 0 15px rgba(0,0,0,0.15);
+        }
+
+        header a{
+            color: #a50a3d;
+            text-decoration: none;
+        }
+
+        .brand{
+
+        }
+
+        .brand a{
+            font-size: 1.5rem;
+            font-weight: bolder;
+        }
+
+        .mobile-menu-btn{
+            display: none;
+            background: #f5a0af;
+            padding: 10px 15px;
+            text-align: center;
+            color: white;
+            border: none;
+            width: 50px;
+        }
+
+        .nav-item{
+            background: #f5a0af;
+            padding: 10px 15px;
+            display: inline-block;
+            width: 100px;
+            text-align: center;
+            color: white;
+        }
+
+        .nav{
+
+        }
+
+        .nav-list{
+           padding: 0;
+        }
+
+        .nav-list li{
+            list-style: none;
+            display: inline-block;
+        }
+
+        .nav-item{
+
+        }
+
+        @media screen and (max-width:480px) {
+            header{
+                width: 100%;
+                flex-wrap: wrap;
+            }
+
+            .mobile-menu-btn{
+                display: block;
+            }
+
+            .nav{
+                display: none;
+                width: 100%;
+            }
+            .nav-list li{
+                display: block;
+            }
+
+            .nav-item{
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .nav-item:first-child{
+                margin-top: 10px;
+            }
+        }
+
+        .show-nav{
+            display: block;
+            animation: showSlow 0.5s;
+            position: absolute;
+            top: 62px;
+            right: 0;
+            padding: 10px;
+            background: #fff7f7;
+            z-index: -1;
+            box-shadow: 0 0 15px rgba(0,0,0,0.15);
+        }
+
+        @keyframes showSlow {
+            0%{
+                transform: translateY(-100px);
+            }
+
+            100%{
+                transform: translateY(0px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand">
+            <a href="">MMS IT</a>
+        </div>
+        <i class="feather-align-justify mobile-menu-btn"></i>
+        <!-- <button class="mobile-menu-btn">
+            M
+        </button> -->
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a class="nav-item" href="#">Home</a></li>
+                <li><a class="nav-item" href="#">About</a></li>
+                <li><a class="nav-item" href="#">Services</a></li>
+                <li><a class="nav-item" href="#">Gallery</a></li>
+                <li><a class="nav-item" href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <script>
+        let nav = document.querySelector("nav");
+        document.getElementsByClassName("mobile-menu-btn")[0].onclick = function(){
+            nav.classList.toggle("show-nav");
+        }
+    </script>
+</body>
+</html>

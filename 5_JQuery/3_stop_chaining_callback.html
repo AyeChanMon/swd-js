@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3_stop_chaining_callback</title>
+    <style>
+        .obj{
+            width: 300px;
+            height: 100px;
+            background: gray;
+            margin-top: 10px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <button class="animate">Aminate</button>
+    <button class="stop">Stop</button>   
+    <div class="obj"></div>
+
+    <button class="chain">Chain</button>
+    <p class="obj2">I'm Pinky</p>
+
+    <script src="js/jquery.js"></script>
+    <script>
+        $(".animate").click(function(){
+            $(".obj").animate({
+                left: "+=50px",
+                top: "+=100px"
+            },3000,function(){
+                console.log("finish");
+            });
+        });
+
+        $(".stop").click(function(){
+            $(".obj").stop();
+        });
+
+        $(".chain").click(function(){
+            $(".obj2").css("color","blue").hide(2000).show(10000);
+        });
+    </script>
+</body>
+</html>

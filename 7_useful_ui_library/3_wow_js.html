@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="vendor/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/css/animate_it/css/animate.min.css">
+</head>
+
+<body>
+    <section class="container-fluid vh-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12">
+                <h1 class="text-center wow animate__zoomIn">Section 1</h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid vh-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12">
+                <h1 class="text-center wow animate__zoomIn">Section 2</h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="container-fluid vh-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12">
+                <h1 class="text-center wow animate__zoomIn">Section 3</h1>
+            </div>
+        </div>
+    </section>
+
+    <script src="vendor/js/jquery.min.js"></script>
+    <script src="vendor/js/bootstrap.min.js"></script>
+    <script src="vendor/js/wow/wow.min.js"></script>
+    <script>
+        
+        wow = new WOW(
+            {
+                boxClass: 'wow',      // default
+                animateClass: 'animate__animated', // default
+                offset: 0,          // default
+                mobile: true,       // default
+                live: true        // default
+            }
+        )
+        wow.init();
+    </script>
+</body>
+
+</html>

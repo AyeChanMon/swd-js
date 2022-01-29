@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="vendor/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/venobox/venobox.css" media="screen">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="my-3">
+                        <a class="venobox" data-gall="myGallery" href="vendor/images/wutthmone.jpg">
+                            <img src="vendor/images/wutthmone.jpg" alt="image alt" class="img-fluid" /></a>
+                    </div>
+                    <div class="my-3">
+                        <a class="venobox" data-gall="myGallery" href="vendor/images/exo.jpg">
+                            <img src="vendor/images/exo.jpg" alt="image alt" class="img-fluid" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="vendor/js/jquery.min.js"></script>
+    <script src="vendor/js/bootstrap.min.js"></script>
+    <script src="vendor/venobox/venobox.min.js"></script>
+    <script>
+        // $(document).ready(function () {
+        //     /* default settings */
+        //     $('.venobox_custom').venobox({
+        //         framewidth: '500px',        // default: ''
+        //         frameheight: "auto",       // default: ''
+        //         border: '2',             // default: '0'
+        //         bgcolor: '#ffffff60',         // default: '#fff'
+        //         titleattr: 'data-title',    // default: 'title'
+        //         numeratio: true,            // default: false
+        //         infinigall: true            // default: false
+        //     });
+        // });
+        new VenoBox({
+            selector: ".venobox",
+            
+        });
+    </script>
+</body>
+
+</html>

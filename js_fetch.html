@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .news {
+            width: 80%;
+            margin: 100px auto;
+            columns: 3 250px;
+        }
+
+        .card {
+            width: 100%;
+        }
+
+        .card-img {
+            width: 100%;
+        }
+
+        .title {}
+
+        .author {}
+
+        .description {}
+    </style>
+</head>
+
+<body>
+    <p id="con"></p>
+    <div class="news">
+        <div class="card">
+            <img src="" alt="" class="card-img">
+            <h4 class="title"></h4>
+            <small class="author"></small>
+            <p class="description"></p>
+            <a href="" class="read-more"></a>
+        </div>
+    </div>
+    <script>
+        let con = document.getElementById("con");
+        con.innerHTML = "loading";
+        fetch('http://newsapi.org/v2/everything?q=tesla&from=2021-10-28&sortBy=publishedAt&apiKey=b7a583fd5e874e62a4a5ee88093e0a41')
+            .then(response => response.json())
+            .then(data => {
+                con.innerHTML = "";
+                let articles = data.articles;
+                let news = document.querySelector(".news");
+                articles.map(function (el, index) {
+                    news.innerHTML += `
+          <div class="card">
+            <img src=${el.urlToImage} alt="" class="card-img">
+            <h4 class="title">${el.title}</h4>
+            <small class="author">${el.author}</small>
+            <p class="description">${el.description}</p>
+            <a href=${el.url} class="read-more">Read More</a>
+        </div>
+          `;
+                });
+            });
+
+
+    </script>
+</body>
+
+</html>

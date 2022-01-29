@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asyn Function</title>
+</head>
+
+<body>
+    <script>
+        function aa() {
+            console.log("aa");
+            fetch('https://fakestoreapi.com/products')
+                .then(res => res.json())
+                .then(json => console.log("bb"))
+            console.log("cc");
+        }
+        // fetch('https://fakestoreapi.com/products')
+        //     .then(res=>res.json())
+        //     .then(json=>console.log(json))
+
+
+        //async fun [async => await]
+        async function bb(){
+            console.log("aa");
+            // let data = await fetch('https://fakestoreapi.com/products');
+            // console.log(data); 
+            await fetch('https://fakestoreapi.com/products')
+                .then(res => res.json())
+                .then(json => console.log("bb"))
+            console.log("cc");    
+        }
+    </script>
+</body>
+
+</html>

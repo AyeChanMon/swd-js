@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr1 = [1,2,3];
+        let arr2 = ["x","y","z"];
+
+        let obj1 = {name:"hhh"};
+        let obj2 = {age:26};
+
+        let bb = {...obj1,...obj2};
+        console.log(bb);
+        
+        let aa = ["start",...arr1, "y",...arr2];
+        console.log(aa);
+    </script>
+</body>
+</html>

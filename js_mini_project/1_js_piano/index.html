@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano Project</title>
+</head>
+<body>
+    <input type="text" id="cords">
+    <br><br>
+    <button onclick="saveCords()">Save</button>
+    <br><br>   
+
+    <button onclick="run('C4')">C4</button>
+    <button onclick="run('D4')">D4</button>
+    <button onclick="run('E4')">E4</button>
+    <button onclick="run('F4')">F4</button>
+    <button onclick="run('G4')">G4</button>
+    <button onclick="run('A4')">A4</button>
+    <button onclick="run('B4')">B4</button>
+    <button onclick="run('C5')">C5</button>
+   
+    <br><br>
+    <ul id="list"></ul>
+
+    <script>
+        let cords = document.getElementById("cords");
+        let list = document.getElementById("list");
+
+        let pianoMemory = [];
+        function run(x){
+            let a = new Audio(`sound/${x}.mp3`);
+            a.play();
+            cords.value += x+",";
+        }
+
+        function saveCords(){
+            let input = cords.value;
+            pianoMemory.push(input)
+            cords.value = "";
+            list.innerHTML = "";
+            pianoMemory.map(function(el, index){
+                list.innerHTML+=`<li>${el}  <button onclick='rePlay(${index})'>Replay</button></li> `;
+            });           
+        }
+
+        function rePlay(x){
+            console.log(x);
+            let current = pianoMemory[x].split(",");
+            current.pop();
+            let tempo = prompt("input tempo in millisecond");
+            console.log(current);
+            console.log(tempo);
+            runMemory(current,Number(tempo));
+        }
+
+        function runMemory(arr, delay=1000){
+            let x = delay;
+            arr.map(function(el, index){
+                setTimeout(run, x, el);
+                x+= delay;
+            })
+        }
+
+        document.addEventListener("keyup",function(e){
+            console.log(e.keyCode);
+            let currentKey = e.keyCode;
+            if(currentKey == 65){
+                run('C4');
+            }else if(currentKey == 83){
+                run('D4');
+            }else if(currentKey == 68){
+                run('E4');
+            }else if(currentKey == 70){
+                run('F4');
+            }else if(currentKey == 74){
+                run('G4');
+            }else if(currentKey == 75){
+                run('A4');
+            }else if(currentKey == 76){
+                run('B4');
+            }else if(currentKey == 186){
+                run('C5');
+            }
+        })
+
+        
+    </script>
+</body>
+</html>
